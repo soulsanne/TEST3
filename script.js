@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         emoji.style.left = Math.random() * window.innerWidth + "px";
         emoji.style.top = "-50px";
         emoji.style.fontSize = "24px";
-        emoji.style.animation = "fall 2s ease-out forwards";
+        emoji.style.animation = "fall 2s ease-out";
         emoji.style.zIndex = 9999;
         container.appendChild(emoji);
 
