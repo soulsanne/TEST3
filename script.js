@@ -1,3 +1,4 @@
+// Countdown logic
 const birthday = new Date("2025-12-17T00:00:00").getTime();
 const countdownElement = document.getElementById("countdown");
 
@@ -21,23 +22,30 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-function checkPin() {
+// PIN logic & autoplay music
+document.getElementById("pinButton").addEventListener("click", () => {
   const input = document.getElementById("pinInput").value;
   if (input === "1712") {
     document.getElementById("countdownPage").classList.add("hidden");
     document.getElementById("greetingPage").classList.remove("hidden");
 
-    // Memutar lagu setelah PIN benar
-    const song = document.getElementById("birthdayMusic");
-    song.play().catch(error => {
-      console.log("Autoplay diblokir oleh browser. Pengguna harus klik dulu.");
+    const song = document.getElementById("birthdaySong");
+    song.volume = 1.0;
+    song.play().then(() => {
+      console.log("Lagu diputar");
+    }).catch((err) => {
+      console.warn("Autoplay diblokir, user harus klik layar.");
+      alert("Klik di mana saja pada layar untuk mulai memutar lagu.");
+      document.body.addEventListener("click", () => {
+        song.play();
+      }, { once: true });
     });
-
   } else {
     alert("PIN salah. Coba lagi!");
   }
-}
+});
 
+// Confetti logic
 document.getElementById("confettiButton").addEventListener("click", () => {
   const emojis = ["🎉", "🎂", "🥳", "🎈", "💖", "🌟"];
   const container = document.getElementById("emojiContainer");
