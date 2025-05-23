@@ -41,7 +41,7 @@ button:hover {
 }
 
 .background {
-  background-image: url("Romance.jpg"); /* pastikan file Romance.jpg ada di root */
+  background-image: url("Romance.jpg");
   background-size: cover;
   background-position: center;
   padding: 30px;
