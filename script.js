@@ -28,7 +28,7 @@ function checkPin() {
     document.getElementById("greetingPage").classList.remove("hidden");
 
     // Memutar lagu setelah PIN benar
-    const song = document.getElementById("birthdaySong");
+    const song = document.getElementById("birthdayMusic");
     song.play().catch(error => {
       console.log("Autoplay diblokir oleh browser. Pengguna harus klik dulu.");
     });
