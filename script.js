@@ -32,8 +32,8 @@ function checkPin() {
   } else {
     alert("PIN salah. Coba lagi!");
   }
+}
 
-});
 
 // Confetti logic
 document.getElementById("confettiButton").addEventListener("click", () => {
