@@ -26,6 +26,13 @@ function checkPin() {
   if (input === "1712") {
     document.getElementById("countdownPage").classList.add("hidden");
     document.getElementById("greetingPage").classList.remove("hidden");
+
+    // Memutar lagu setelah PIN benar
+    const song = document.getElementById("birthdaySong");
+    song.play().catch(error => {
+      console.log("Autoplay diblokir oleh browser. Pengguna harus klik dulu.");
+    });
+
   } else {
     alert("PIN salah. Coba lagi!");
   }
