@@ -1,4 +1,3 @@
-// Countdown logic
 const birthday = new Date("2025-12-17T00:00:00").getTime();
 const countdownElement = document.getElementById("countdown");
 const song = document.getElementById("birthdaySong");
@@ -34,8 +33,6 @@ function checkPin() {
   }
 }
 
-
-// Confetti logic
 document.getElementById("confettiButton").addEventListener("click", () => {
   const emojis = ["🎉", "🎂", "🥳", "🎈", "💖", "🌟"];
   const container = document.getElementById("emojiContainer");
