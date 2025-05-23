@@ -29,7 +29,7 @@ document.getElementById("pinButton").addEventListener("click", () => {
     document.getElementById("countdownPage").classList.add("hidden");
     document.getElementById("greetingPage").classList.remove("hidden");
 
-    const song = document.getElementById("birthdaySong");
+    const song = document.getElementById("birthdayMusic");
     song.volume = 1.0;
     song.play().then(() => {
       console.log("Lagu diputar");
