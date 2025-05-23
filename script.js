@@ -43,18 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
       container.innerHTML = "";
 
       for (let i = 0; i < 30; i++) {
-        const emoji = document.createElement("span");
-        emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-        emoji.style.position = "absolute";
-        emoji.style.left = Math.random() * window.innerWidth + "px";
-        emoji.style.top = "-50px";
-        emoji.style.fontSize = "24px";
-        emoji.style.animation = "fall 2s ease-out";
-        emoji.style.zIndex = 9999;
-        container.appendChild(emoji);
+    const emoji = document.createElement("span");
+    emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    emoji.style.position = "absolute";
+    emoji.style.left = Math.random() * window.innerWidth + "px";
+    emoji.style.top = Math.random() * window.innerHeight + "px";
+    emoji.style.animation = "fall 2s ease-out";
+    container.appendChild(emoji);
 
-        setTimeout(() => emoji.remove(), 2000);
-      }
-    });
+    setTimeout(() => emoji.remove(), 2000);
   }
 });
