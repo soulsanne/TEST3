@@ -25,12 +25,12 @@ updateCountdown();
 // PIN logic & autoplay music
 document.getElementById("pinButton").addEventListener("click", () => {
   const input = document.getElementById("pinInput").value;
-  if (input === "1712") {
+  if (input === "1111") {
     document.getElementById("countdownPage").classList.add("hidden");
     document.getElementById("greetingPage").classList.remove("hidden");
 
-    const song = document.getElementById("birthdayMusic");
-    song.volume = 1.0;
+    const song = document.getElementById("birthdaySong");
+    song.volume = 9.0;
     song.play().then(() => {
       console.log("Lagu diputar");
     }).catch((err) => {
