@@ -1,37 +1,23 @@
 const birthday = new Date("2025-12-17T00:00:00").getTime();
 const countdownElement = document.getElementById("countdown");
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = birthday - now;
-
-  if (distance < 0) {
-    countdownElement.innerHTML = "Selamat Ulang Tahun!";
-    return;
-  }
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
-
-  countdownElement.innerHTML = `${days}h ${hours}j ${minutes}m ${seconds}s`;
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-window.checkPin = function () {
+function checkPin() {
   const input = document.getElementById("pinInput").value;
   if (input === "1712") {
     document.getElementById("countdownPage").classList.add("hidden");
     document.getElementById("greetingPage").classList.remove("hidden");
 
-    const music = document.getElementById("birthdayMusic");
-    music.play();
+    // Memutar lagu setelah PIN benar
+    const song = document.getElementById("birthdaySong");
+    song.play().catch(error => {
+      console.log("Autoplay diblokir oleh browser. Pengguna harus klik dulu.");
+    });
+
   } else {
     alert("PIN salah. Coba lagi!");
   }
+}
+
 };
 
 document.addEventListener("DOMContentLoaded", () => {
