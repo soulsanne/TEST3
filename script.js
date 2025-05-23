@@ -29,15 +29,15 @@ document.getElementById("pinButton").addEventListener("click", () => {
     document.getElementById("countdownPage").classList.add("hidden");
     document.getElementById("greetingPage").classList.remove("hidden");
 
-    const Music = document.getElementById("birthdayMusic");
-    Music.volume = 100.0;
-    Music.play().then(() => {
+    const song = document.getElementById("birthdayMusic");
+    song.volume = 100.0;
+    song.play().then(() => {
       console.log("Lagu diputar");
     }).catch((err) => {
       console.warn("Autoplay diblokir, user harus klik layar.");
       alert("Klik di mana saja pada layar untuk mulai memutar lagu.");
       document.body.addEventListener("click", () => {
-        Music.play();
+        song.play();
       }, { once: true });
     });
   } else {
